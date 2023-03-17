@@ -44,7 +44,6 @@ router.post('/', async (req, res) => {
   try {
 
     const newCategoryData = await Category.create({
-      category_id: req.body.category_id,
       category_name: req.body.category_name,
     })
 
@@ -88,7 +87,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
-    const categoryData = await Category.distry({
+    const categoryData = await Category.destroy({
       where: {
         id: req.params.id,
       }
